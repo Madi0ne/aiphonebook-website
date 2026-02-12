@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIPhoneBook — The Ultimate AI-Powered Contact Organizer</title>
+    <meta name="description" content="AIPhoneBook transforms contact management with AI-powered insights, smart duplicate detection, event reminders, and secure cloud backup. Available on iOS and Mac.">
+    <meta name="keywords" content="contact organizer, AI contacts, phone book app, duplicate contacts, contact manager, iOS app, smart contacts">
+    <meta name="author" content="Intellispace Solutions">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="AIPhoneBook — The Ultimate AI-Powered Contact Organizer">
+    <meta property="og:description" content="Transform your contact management with AI-powered insights, smart organization, and seamless syncing across all your devices.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aiphonebook.app">
+    <meta property="og:image" content="assets/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AIPhoneBook — The Ultimate AI-Powered Contact Organizer">
+    <meta name="twitter:description" content="Transform your contact management with AI-powered insights, smart organization, and seamless syncing across all your devices.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <div class="logo-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect width="32" height="32" rx="8" fill="url(#logoGrad)"/>
+                        <path d="M10 10.5C10 9.67 10.67 9 11.5 9H20.5C21.33 9 22 9.67 22 10.5V21.5C22 22.33 21.33 23 20.5 23H11.5C10.67 23 10 22.33 10 21.5V10.5Z" stroke="white" stroke-width="1.5"/>
+                        <circle cx="16" cy="14" r="2.5" stroke="white" stroke-width="1.5"/>
+                        <path d="M12.5 20C12.5 18.07 14.07 16.5 16 16.5C17.93 16.5 19.5 18.07 19.5 20" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                        <circle cx="20" cy="10" r="3" fill="#00D4AA"/>
+                        <path d="M18.8 10L19.6 10.8L21.2 9.2" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32">
+                                <stop offset="0%" stop-color="#0A1628"/>
+                                <stop offset="100%" stop-color="#1A2744"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <span class="logo-text">AIPhoneBook</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#ai-power" class="nav-link">AI Power</a>
+                <a href="#testimonials" class="nav-link">Reviews</a>
+                <a href="#privacy" class="nav-link">Privacy</a>
+            </div>
+            <a href="#download" class="nav-cta">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M8 1v10M8 11L4 7M8 11l4-4M2 14h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Download
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#features" class="mobile-link">Features</a>
+        <a href="#how-it-works" class="mobile-link">How It Works</a>
+        <a href="#ai-power" class="mobile-link">AI Power</a>
+        <a href="#testimonials" class="mobile-link">Reviews</a>
+        <a href="#privacy" class="mobile-link">Privacy</a>
+        <a href="#download" class="mobile-link cta">Download App</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+            <div class="hero-grid-pattern"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    AI-Powered Contacts
+                </div>
+                <h1 class="hero-title">
+                    The Smartest Way to<br>
+                    <span class="gradient-text">Manage Contacts</span>
+                </h1>
+                <p class="hero-subtitle">
+                    AIPhoneBook uses artificial intelligence to analyze, organize, enrich, and simplify your contact list. Sync across Apple, Google, and social accounts into one unified address book.
+                </p>
+                <div class="hero-actions">
+                    <a href="#download" class="btn btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                            <path d="M12.75 9L9 12.75M9 12.75L5.25 9M9 12.75V2.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2.25 15.75H15.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        Download for iOS
+                    </a>
+                    <a href="#features" class="btn btn-secondary">
+                        Explore Features
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                            <path d="M5 11L9 7L5 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">AI</span>
+                        <span class="stat-label">Powered Insights</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number">3+</span>
+                        <span class="stat-label">Account Syncs</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Private & Secure</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="phone-mockup">
+                    <div class="phone-frame">
+                        <div class="phone-placeholder">
+                            <div class="placeholder-header">
+                                <div class="placeholder-search"></div>
+                            </div>
+                            <div class="placeholder-contacts">
+                                <div class="placeholder-contact">
+                                    <div class="placeholder-avatar" style="--avatar-color: #00D4AA"></div>
+                                    <div class="placeholder-info">
+                                        <div class="placeholder-name"></div>
+                                        <div class="placeholder-detail"></div>
+                                    </div>
+                                    <div class="placeholder-badge">AI</div>
+                                </div>
+                                <div class="placeholder-contact">
+                                    <div class="placeholder-avatar" style="--avatar-color: #6C5CE7"></div>
+                                    <div class="placeholder-info">
+                                        <div class="placeholder-name"></div>
+                                        <div class="placeholder-detail"></div>
+                                    </div>
+                                </div>
+                                <div class="placeholder-contact">
+                                    <div class="placeholder-avatar" style="--avatar-color: #0984E3"></div>
+                                    <div class="placeholder-info">
+                                        <div class="placeholder-name"></div>
+                                        <div class="placeholder-detail"></div>
+                                    </div>
+                                    <div class="placeholder-badge dup">2x</div>
+                                </div>
+                                <div class="placeholder-contact">
+                                    <div class="placeholder-avatar" style="--avatar-color: #E17055"></div>
+                                    <div class="placeholder-info">
+                                        <div class="placeholder-name"></div>
+                                        <div class="placeholder-detail"></div>
+                                    </div>
+                                </div>
+                                <div class="placeholder-contact">
+                                    <div class="placeholder-avatar" style="--avatar-color: #FDCB6E"></div>
+                                    <div class="placeholder-info">
+                                        <div class="placeholder-name"></div>
+                                        <div class="placeholder-detail"></div>
+                                    </div>
+                                    <div class="placeholder-badge bday">🎂</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="floating-card card-ai">
+                    <span class="card-icon">🤖</span>
+                    <div>
+                        <span class="card-title">AI Insight</span>
+                        <span class="card-desc">3 duplicates found</span>
+                    </div>
+                </div>
+                <div class="floating-card card-event">
+                    <span class="card-icon">🎂</span>
+                    <div>
+                        <span class="card-title">Birthday Tomorrow</span>
+                        <span class="card-desc">Send a reminder?</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Features</span>
+                <h2 class="section-title">Everything you need for<br><span class="gradient-text">smarter contacts</span></h2>
+                <p class="section-subtitle">AIPhoneBook combines AI-powered insights with intuitive organization tools — all in one beautiful, privacy-first app.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card feature-highlight">
+                    <div class="feature-icon-wrap" style="--accent: #00D4AA">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <path d="M14 3.5C8.2 3.5 3.5 8.2 3.5 14S8.2 24.5 14 24.5 24.5 19.8 24.5 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="14" cy="14" r="3.5" fill="currentColor"/>
+                            <path d="M20 8L22 10L26 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>AI-Powered Contact Insights</h3>
+                    <p>Automatically analyzes your interactions, recommends updates, and surfaces important connections you might be neglecting. Smart enough to know who matters most.</p>
+                </div>
+                <div class="feature-card feature-highlight">
+                    <div class="feature-icon-wrap" style="--accent: #6C5CE7">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <circle cx="10" cy="11" r="4" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="18" cy="11" r="4" stroke="currentColor" stroke-width="2"/>
+                            <path d="M14 15v6M11 18h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Duplicate Contact Detection</h3>
+                    <p>Intelligently identifies and merges duplicate contacts across all your accounts. Clean up your address book with a single tap — no more cluttered, redundant entries.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrap" style="--accent: #E17055">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <rect x="5" y="5" width="18" height="18" rx="3" stroke="currentColor" stroke-width="2"/>
+                            <path d="M5 11h18M11 5v18" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="17.5" cy="17.5" r="1.5" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>Smart Event Reminders</h3>
+                    <p>Never miss a birthday, anniversary, or important date. AI-powered reminders that adapt to your schedule and relationships.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrap" style="--accent: #0984E3">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <path d="M14 3.5L14 24.5M14 3.5L7 10.5M14 3.5L21 10.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Seamless Multi-Account Sync</h3>
+                    <p>Unify contacts from Apple, Google, and social accounts into one clean address book. Changes sync instantly across all your devices.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrap" style="--accent: #FDCB6E">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <path d="M12 3.5H7C5.067 3.5 3.5 5.067 3.5 7V21C3.5 22.933 5.067 24.5 7 24.5H21C22.933 24.5 24.5 22.933 24.5 21V16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M20 3.5L24.5 3.5L24.5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 14L24 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>QR Code Scanner</h3>
+                    <p>Instantly scan QR codes to add contacts, enrich existing entries, or exchange information at events and meetups.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrap" style="--accent: #00B894">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <path d="M21 14H7M7 14L12.83 8.17M7 14L12.83 19.83" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Smart Search & Filters</h3>
+                    <p>Find anyone instantly. Search by name, number, company, notes, or even relationship context. Smart filters for groups, favorites, and recent contacts.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrap" style="--accent: #A29BFE">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <circle cx="14" cy="10.5" r="4.67" stroke="currentColor" stroke-width="2"/>
+                            <path d="M7 22.17C7 18.3 10.13 15.17 14 15.17C17.87 15.17 21 18.3 21 22.17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Group Management</h3>
+                    <p>Organize contacts into smart groups and send group messages effortlessly. Create custom labels and categories that work for you.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrap" style="--accent: #FD79A8">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <path d="M14 3.5C8.2 3.5 3.5 8.2 3.5 14S8.2 24.5 14 24.5 24.5 19.8 24.5 14S19.8 3.5 14 3.5Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M3.5 14H24.5M14 3.5C17 7 18.5 10.5 18.5 14S17 21 14 24.5M14 3.5C11 7 9.5 10.5 9.5 14S11 21 14 24.5" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Secure Cloud Backup</h3>
+                    <p>Your contacts are always safe with encrypted cloud backup. Restore them on any device, anytime — with zero hassle and total peace of mind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">How It Works</span>
+                <h2 class="section-title">Get started in<br><span class="gradient-text">three simple steps</span></h2>
+                <p class="section-subtitle">From messy contacts to a perfectly organized address book — in minutes, not hours.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-line"></div>
+                    <h3>Connect Your Accounts</h3>
+                    <p>Link your Apple, Google, and social accounts. AIPhoneBook securely syncs all your contacts into one unified view.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-line"></div>
+                    <h3>Let AI Analyze</h3>
+                    <p>Our AI scans for duplicates, missing information, upcoming events, and relationship patterns — all on-device and private.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-line"></div>
+                    <h3>Stay Connected</h3>
+                    <p>Get smart reminders, enriched profiles, and actionable insights. Never miss an important date or lose a contact again.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Power Section -->
+    <section class="ai-power" id="ai-power">
+        <div class="container">
+            <div class="ai-layout">
+                <div class="ai-visual">
+                    <div class="ai-demo-card">
+                        <div class="ai-demo-header">
+                            <div class="ai-demo-dot"></div>
+                            <span>AI Analysis</span>
+                        </div>
+                        <div class="ai-demo-body">
+                            <div class="ai-demo-item">
+                                <div class="ai-demo-icon">🔍</div>
+                                <div class="ai-demo-text">
+                                    <strong>12 duplicates detected</strong>
+                                    <span>Merge with one tap</span>
+                                </div>
+                                <div class="ai-demo-action">Fix</div>
+                            </div>
+                            <div class="ai-demo-item">
+                                <div class="ai-demo-icon">🎂</div>
+                                <div class="ai-demo-text">
+                                    <strong>3 birthdays this week</strong>
+                                    <span>Send greetings?</span>
+                                </div>
+                                <div class="ai-demo-action">View</div>
+                            </div>
+                            <div class="ai-demo-item">
+                                <div class="ai-demo-icon">📧</div>
+                                <div class="ai-demo-text">
+                                    <strong>8 contacts need updates</strong>
+                                    <span>Missing email or phone</span>
+                                </div>
+                                <div class="ai-demo-action">Review</div>
+                            </div>
+                            <div class="ai-demo-item">
+                                <div class="ai-demo-icon">👥</div>
+                                <div class="ai-demo-text">
+                                    <strong>Smart group suggestion</strong>
+                                    <span>"Work Team" — 6 contacts</span>
+                                </div>
+                                <div class="ai-demo-action">Create</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ai-info">
+                    <span class="section-tag">AI Intelligence</span>
+                    <h2 class="section-title">Your Contacts,<br><span class="gradient-text">Supercharged by AI</span></h2>
+                    <p class="section-subtitle">AIPhoneBook doesn't just store contacts — it understands them. Our AI works silently in the background, keeping your address book clean, current, and actionable.</p>
+                    <div class="ai-features">
+                        <div class="ai-feature">
+                            <div class="ai-feature-icon">🧠</div>
+                            <div>
+                                <strong>Intelligent Analysis</strong>
+                                <p>AI scans your contacts for patterns, suggests updates, and identifies connections you might be missing</p>
+                            </div>
+                        </div>
+                        <div class="ai-feature">
+                            <div class="ai-feature-icon">🔄</div>
+                            <div>
+                                <strong>Auto-Enrichment</strong>
+                                <p>Automatically fills in missing details like job titles, companies, and social profiles from public sources</p>
+                            </div>
+                        </div>
+                        <div class="ai-feature">
+                            <div class="ai-feature-icon">📊</div>
+                            <div>
+                                <strong>Relationship Insights</strong>
+                                <p>Understand your communication patterns and get nudges to stay in touch with important people</p>
+                            </div>
+                        </div>
+                        <div class="ai-feature">
+                            <div class="ai-feature-icon">🛡️</div>
+                            <div>
+                                <strong>On-Device Processing</strong>
+                                <p>All AI analysis happens on your device. Your contact data never leaves your phone — privacy by design</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Reviews</span>
+                <h2 class="section-title">Loved by people who<br><span class="gradient-text">value connections</span></h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"The event reminders are a game-changer. I never miss a birthday anymore. The app just knows what's important."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="--avatar-color: #00D4AA">S</div>
+                        <div>
+                            <strong>Sarah M.</strong>
+                            <span>Marketing Professional</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"I had over 2,000 contacts with hundreds of duplicates. AIPhoneBook cleaned it all up in minutes. Absolutely brilliant."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="--avatar-color: #6C5CE7">R</div>
+                        <div>
+                            <strong>Rahul K.</strong>
+                            <span>Sales Director</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"Finally, one app that syncs all my accounts seamlessly. The interface is so intuitive and the AI features actually work."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="--avatar-color: #0984E3">P</div>
+                        <div>
+                            <strong>Priya D.</strong>
+                            <span>Business Owner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Section -->
+    <section class="privacy-section" id="privacy">
+        <div class="container">
+            <div class="privacy-card">
+                <div class="privacy-content">
+                    <span class="section-tag">Privacy First</span>
+                    <h2 class="section-title">Your Contacts<br><span class="gradient-text-light">Stay Private</span></h2>
+                    <p class="section-subtitle light">Your contact data is deeply personal. AIPhoneBook is built with privacy as a foundational principle — no tracking, no data selling, no compromises.</p>
+                    <div class="privacy-grid">
+                        <div class="privacy-item">
+                            <div class="privacy-icon">🔐</div>
+                            <strong>End-to-End Encryption</strong>
+                            <p>All your data is encrypted at rest and in transit with industry-leading encryption standards</p>
+                        </div>
+                        <div class="privacy-item">
+                            <div class="privacy-icon">📵</div>
+                            <strong>No Third-Party Sharing</strong>
+                            <p>Your contact data is never shared with advertisers, data brokers, or any third parties. Period.</p>
+                        </div>
+                        <div class="privacy-item">
+                            <div class="privacy-icon">🤖</div>
+                            <strong>On-Device AI</strong>
+                            <p>All AI processing happens locally on your device. Your data never needs to leave your phone.</p>
+                        </div>
+                        <div class="privacy-item">
+                            <div class="privacy-icon">✋</div>
+                            <strong>You're In Control</strong>
+                            <p>Delete your data anytime. Export everything. Full transparency on what we access and why.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Pricing</span>
+                <h2 class="section-title">Simple, transparent<br><span class="gradient-text">pricing</span></h2>
+                <p class="section-subtitle">Start free with core features. Upgrade for the full AI-powered experience.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Free</h3>
+                        <div class="pricing-price">
+                            <span class="price-amount">$0</span>
+                            <span class="price-period">forever</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Contact sync & management
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Basic duplicate detection
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Event reminders
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            QR code scanner
+                        </li>
+                    </ul>
+                    <a href="#download" class="btn btn-secondary pricing-btn">Get Started</a>
+                </div>
+                <div class="pricing-card premium">
+                    <div class="pricing-popular">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Premium</h3>
+                        <div class="pricing-price">
+                            <span class="price-amount">$1.99</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Everything in Free
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Advanced AI insights
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Smart duplicate merging
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Contact enrichment
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Cloud backup
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Priority support
+                        </li>
+                    </ul>
+                    <a href="#download" class="btn btn-primary pricing-btn">Start Free Trial</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Yearly</h3>
+                        <div class="pricing-price">
+                            <span class="price-amount">$14.99</span>
+                            <span class="price-period">/year</span>
+                        </div>
+                        <div class="pricing-save">Save 37%</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Everything in Premium
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Best value plan
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Early access to new features
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Extended cloud storage
+                        </li>
+                    </ul>
+                    <a href="#download" class="btn btn-secondary pricing-btn">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download CTA Section -->
+    <section class="download" id="download">
+        <div class="container">
+            <div class="download-content">
+                <h2 class="section-title">Ready to Transform Your<br><span class="gradient-text">Contact Management?</span></h2>
+                <p class="section-subtitle">Download AIPhoneBook and experience the future of contact management. Free to start, powerful to grow.</p>
+                <div class="download-actions">
+                    <a href="https://apps.apple.com/app/aiphonebook/id6505064889" class="app-store-badge" target="_blank" rel="noopener">
+                        <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+                            <rect width="200" height="60" rx="10" fill="white"/>
+                            <text x="72" y="24" fill="#0A1628" font-family="Inter, sans-serif" font-size="10" font-weight="500">Download on the</text>
+                            <text x="72" y="42" fill="#0A1628" font-family="Inter, sans-serif" font-size="18" font-weight="700">App Store</text>
+                            <g transform="translate(20, 12)">
+                                <path d="M24.769 20.301a6.192 6.192 0 0 1 2.95-5.198 6.348 6.348 0 0 0-5.003-2.704c-2.097-.22-4.142 1.272-5.213 1.272-1.09 0-2.726-1.252-4.505-1.214a6.627 6.627 0 0 0-5.576 3.404c-2.412 4.178-.613 10.312 1.696 13.693 1.155 1.655 2.504 3.502 4.282 3.437 1.738-.072 2.387-1.109 4.483-1.109 2.077 0 2.687 1.109 4.498 1.068 1.861-.029 3.024-1.664 4.139-3.335a13.73 13.73 0 0 0 1.894-3.874 5.987 5.987 0 0 1-3.645-5.44Zm-3.387-10.01a6.097 6.097 0 0 0 1.394-4.37 6.205 6.205 0 0 0-4.013 2.08 5.808 5.808 0 0 0-1.431 4.212 5.133 5.133 0 0 0 4.05-1.922Z" fill="#0A1628"/>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+                <p class="download-note">Free to download &middot; iOS 17.0+ &middot; iPhone, iPad, Mac</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="nav-logo">
+                        <div class="logo-icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <rect width="32" height="32" rx="8" fill="url(#logoGrad2)"/>
+                                <path d="M10 10.5C10 9.67 10.67 9 11.5 9H20.5C21.33 9 22 9.67 22 10.5V21.5C22 22.33 21.33 23 20.5 23H11.5C10.67 23 10 22.33 10 21.5V10.5Z" stroke="white" stroke-width="1.5"/>
+                                <circle cx="16" cy="14" r="2.5" stroke="white" stroke-width="1.5"/>
+                                <path d="M12.5 20C12.5 18.07 14.07 16.5 16 16.5C17.93 16.5 19.5 18.07 19.5 20" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                                <defs>
+                                    <linearGradient id="logoGrad2" x1="0" y1="0" x2="32" y2="32">
+                                        <stop offset="0%" stop-color="#0A1628"/>
+                                        <stop offset="100%" stop-color="#1A2744"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <span class="logo-text">AIPhoneBook</span>
+                    </a>
+                    <p class="footer-desc">AI-powered contact management for a more connected you.</p>
+                </div>
+                <div class="footer-links-group">
+                    <div class="footer-col">
+                        <h4>Product</h4>
+                        <a href="#features">Features</a>
+                        <a href="#how-it-works">How It Works</a>
+                        <a href="#ai-power">AI Power</a>
+                        <a href="#pricing">Pricing</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Support</h4>
+                        <a href="mailto:support@aiphonebook.app">Contact Us</a>
+                        <a href="/data-deletion">Data Deletion</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <a href="/privacy">Privacy Policy</a>
+                        <a href="/terms">Terms & Conditions</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Intellispace Solutions. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Twitter">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
