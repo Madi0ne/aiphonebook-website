@@ -716,6 +716,526 @@ body {
 }
 
 /* ============================================
+   Privacy Shield Section
+   ============================================ */
+
+.privacy-shield {
+    padding: 120px 0 100px;
+    background: var(--color-surface);
+    position: relative;
+    overflow: hidden;
+}
+
+.ps-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.ps-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+}
+
+.ps-orb-1 {
+    width: 500px;
+    height: 500px;
+    background: rgba(0, 212, 170, 0.06);
+    top: -100px;
+    right: -100px;
+}
+
+.ps-orb-2 {
+    width: 400px;
+    height: 400px;
+    background: rgba(108, 92, 231, 0.05);
+    bottom: -100px;
+    left: -50px;
+}
+
+.privacy-shield .container {
+    position: relative;
+    z-index: 1;
+}
+
+.ps-badge-row {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.ps-first-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #FDCB6E;
+    background: rgba(253, 203, 110, 0.12);
+    padding: 5px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(253, 203, 110, 0.2);
+}
+
+.ps-first-badge svg {
+    color: #FDCB6E;
+}
+
+/* Layout: Problem/Solution left, Card demo right */
+.ps-layout {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 64px;
+    align-items: start;
+    margin-bottom: 72px;
+}
+
+/* Problem section */
+.ps-problem-solution {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.ps-ps-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 16px;
+}
+
+.ps-problem-label {
+    color: #E17055;
+}
+
+.ps-solution-label {
+    color: var(--color-accent);
+}
+
+.ps-scenario-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+.ps-scenario {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    background: rgba(225, 112, 85, 0.06);
+    border: 1px solid rgba(225, 112, 85, 0.12);
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+}
+
+.ps-scenario:hover {
+    background: rgba(225, 112, 85, 0.1);
+    border-color: rgba(225, 112, 85, 0.2);
+}
+
+.ps-scenario-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.ps-scenario-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.ps-scenario-text strong {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.ps-scenario-text span {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+}
+
+/* Arrow divider */
+.ps-arrow-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    color: var(--color-text-secondary);
+}
+
+.ps-arrow-divider svg {
+    opacity: 0.4;
+}
+
+/* Solution steps */
+.ps-solution-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ps-step {
+    display: flex;
+    gap: 14px;
+    align-items: start;
+    padding: 14px 18px;
+    background: rgba(0, 212, 170, 0.04);
+    border: 1px solid rgba(0, 212, 170, 0.1);
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+}
+
+.ps-step:hover {
+    background: rgba(0, 212, 170, 0.08);
+    border-color: rgba(0, 212, 170, 0.18);
+}
+
+.ps-step-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--color-accent-dim);
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.ps-step strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.ps-step span {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+/* Card Demo (phone mockup) */
+.ps-demo {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    position: sticky;
+    top: 120px;
+}
+
+.ps-phone-frame {
+    width: 340px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: 24px 20px;
+    box-shadow: var(--shadow-xl), 0 0 60px rgba(0, 212, 170, 0.06);
+}
+
+.ps-phone-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.ps-phone-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.ps-phone-count {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+.ps-phone-progress {
+    height: 3px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 2px;
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.ps-phone-progress-fill {
+    height: 100%;
+    width: 27%;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+    animation: ps-progress 3s ease-in-out infinite alternate;
+}
+
+@keyframes ps-progress {
+    0% { width: 22%; }
+    100% { width: 32%; }
+}
+
+/* Card stack */
+.ps-card-stack {
+    position: relative;
+    height: 260px;
+    margin-bottom: 20px;
+    perspective: 600px;
+}
+
+.ps-card {
+    position: absolute;
+    left: 50%;
+    width: 92%;
+    background: var(--color-surface-raised);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ps-card-3 {
+    transform: translateX(-50%) translateY(16px) scale(0.9);
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.ps-card-2 {
+    transform: translateX(-50%) translateY(8px) scale(0.95);
+    opacity: 0.6;
+    z-index: 2;
+}
+
+.ps-card-1 {
+    transform: translateX(-50%) translateY(0) scale(1);
+    opacity: 1;
+    z-index: 3;
+    animation: ps-card-float 4s ease-in-out infinite;
+}
+
+@keyframes ps-card-float {
+    0%, 100% { transform: translateX(-50%) translateY(0) scale(1); }
+    50% { transform: translateX(-50%) translateY(-4px) scale(1); }
+}
+
+.ps-card-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--card-color, var(--color-accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 12px;
+}
+
+.ps-card-name {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.ps-card-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--color-accent);
+    background: var(--color-accent-dim);
+    padding: 2px 10px;
+    border-radius: 6px;
+    margin-top: 4px;
+}
+
+.ps-card-detail {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    margin-bottom: 10px;
+}
+
+.ps-card-ai-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.ps-card-ai-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--color-accent);
+    background: var(--color-accent-dim);
+    padding: 4px 10px;
+    border-radius: 8px;
+}
+
+.ps-card-ai-badge svg {
+    color: var(--color-accent);
+}
+
+.ps-card-ai-reason {
+    font-size: 11px;
+    color: var(--color-text-secondary);
+    font-style: italic;
+}
+
+.ps-card-signals {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.ps-signal {
+    font-size: 10px;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.05);
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+}
+
+.ps-signal.highlight {
+    background: var(--color-accent-dim);
+    color: var(--color-accent);
+    border-color: rgba(0, 212, 170, 0.2);
+}
+
+/* Phone action buttons */
+.ps-phone-actions {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.ps-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 10px;
+    cursor: default;
+    transition: var(--transition);
+}
+
+.ps-action-keep {
+    color: #94A3B8;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--color-border);
+}
+
+.ps-action-skip {
+    color: var(--color-text-secondary);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--color-border);
+}
+
+.ps-action-move {
+    color: var(--color-accent);
+    background: var(--color-accent-dim);
+    border: 1px solid rgba(0, 212, 170, 0.2);
+}
+
+/* Bottom benefits */
+.ps-benefits {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.ps-benefit {
+    text-align: center;
+    padding: 28px 20px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: var(--transition);
+}
+
+.ps-benefit:hover {
+    background: rgba(255,255,255,0.04);
+    border-color: var(--color-border-hover);
+    transform: translateY(-2px);
+}
+
+.ps-benefit-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: var(--color-accent-dim);
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+}
+
+.ps-benefit strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.ps-benefit p {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Privacy Shield Responsive */
+@media (max-width: 900px) {
+    .ps-layout {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+    .ps-demo {
+        position: static;
+        order: -1;
+    }
+    .ps-phone-frame {
+        margin: 0 auto;
+    }
+    .ps-benefits {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .privacy-shield {
+        padding: 80px 0 60px;
+    }
+    .ps-phone-frame {
+        width: 100%;
+        max-width: 340px;
+    }
+    .ps-benefits {
+        grid-template-columns: 1fr;
+    }
+    .ps-card-stack {
+        height: 240px;
+    }
+}
+
+/* ============================================
    How It Works Section
    ============================================ */
 
