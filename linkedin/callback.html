@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting... | AIPhoneBook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background: #060B14;
+            color: #E2E8F0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 400px;
+        }
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border: 3px solid rgba(0, 212, 170, 0.2);
+            border-top-color: #00D4AA;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 1.5rem;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        h1 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        p {
+            font-size: 0.9rem;
+            color: #94A3B8;
+            line-height: 1.5;
+        }
+        a {
+            color: #00D4AA;
+            text-decoration: none;
+        }
+        .fallback {
+            margin-top: 2rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="spinner"></div>
+        <h1>Redirecting to AIPhoneBook...</h1>
+        <p>You should be redirected to the app automatically.</p>
+        <div class="fallback" id="fallback">
+            <p>If the app didn't open, <a href="#" id="manual-link">tap here to try again</a>.</p>
+        </div>
+    </div>
+    <script>
+        (function () {
+            var search = window.location.search;
+            var hash = window.location.hash;
+            var deepLink = 'aiphonebook://linkedin/callback' + search + hash;
+
+            window.location.href = deepLink;
+
+            setTimeout(function () {
+                document.getElementById('fallback').style.display = 'block';
+                document.getElementById('manual-link').href = deepLink;
+            }, 2000);
+        })();
+    </script>
+</body>
+</html>
