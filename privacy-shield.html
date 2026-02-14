@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Shield — AIPhoneBook</title>
+    <meta name="description" content="Privacy Shield uses on-device AI to identify service contacts and move them out of your social apps' reach — while keeping CallerID working.">
+    <meta property="og:title" content="Privacy Shield — AIPhoneBook">
+    <meta property="og:description" content="Your plumber doesn't need to see your WhatsApp status. Privacy Shield fixes this.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aiphonebook.app/privacy-shield">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Feature page base */
+        .feature-page { padding: 140px 0 80px; }
+        .feature-content { max-width: 760px; margin: 0 auto; }
+        .feature-content h1 { font-size: 42px; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.03em; line-height: 1.15; }
+        .feature-content .feature-tagline { font-size: 18px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 48px; }
+        .feature-content h2 { font-size: 26px; font-weight: 700; margin-top: 56px; margin-bottom: 16px; letter-spacing: -0.02em; }
+        .feature-content h3 { font-size: 18px; font-weight: 600; margin-top: 32px; margin-bottom: 10px; color: var(--color-text); }
+        .feature-content p { color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 16px; font-size: 15px; }
+        .feature-content ul { color: var(--color-text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .feature-content li { margin-bottom: 10px; line-height: 1.7; font-size: 15px; }
+        .feature-content a { color: var(--color-accent); text-decoration: none; }
+        .feature-content a:hover { text-decoration: underline; }
+        .feature-back { display: inline-flex; align-items: center; gap: 8px; color: var(--color-accent); text-decoration: none; font-weight: 500; font-size: 14px; margin-bottom: 32px; }
+        .feature-back:hover { text-decoration: underline; }
+
+        /* Shield badge */
+        .shield-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #FDCB6E;
+            background: rgba(253, 203, 110, 0.1);
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(253, 203, 110, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .shield-badge svg { width: 14px; height: 14px; }
+
+        /* Callout box */
+        .callout {
+            padding: 24px 28px;
+            border-radius: 16px;
+            margin: 28px 0;
+            border: 1px solid;
+        }
+        .callout-privacy {
+            background: rgba(0, 212, 170, 0.04);
+            border-color: rgba(0, 212, 170, 0.15);
+        }
+        .callout-callerid {
+            background: rgba(9, 132, 227, 0.05);
+            border-color: rgba(9, 132, 227, 0.15);
+        }
+        .callout-warning {
+            background: rgba(225, 112, 85, 0.05);
+            border-color: rgba(225, 112, 85, 0.12);
+        }
+        .callout-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 8px;
+        }
+        .callout-title .icon { font-size: 20px; flex-shrink: 0; }
+        .callout p { margin-bottom: 0; }
+
+        /* Swipe cards visual */
+        .swipe-explainer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 28px 0;
+        }
+        .swipe-card {
+            padding: 20px 24px;
+            border-radius: 14px;
+            border: 1px solid var(--color-border);
+            background: var(--color-surface);
+        }
+        .swipe-card.swipe-left {
+            border-color: rgba(148, 163, 184, 0.15);
+        }
+        .swipe-card.swipe-right {
+            border-color: rgba(0, 212, 170, 0.2);
+            background: rgba(0, 212, 170, 0.03);
+        }
+        .swipe-card.swipe-skip {
+            grid-column: 1 / -1;
+            border-color: rgba(255,255,255,0.08);
+        }
+        .swipe-direction {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .swipe-left .swipe-direction { color: #94A3B8; }
+        .swipe-right .swipe-direction { color: var(--color-accent); }
+        .swipe-skip .swipe-direction { color: var(--color-text-secondary); }
+        .swipe-card p { font-size: 14px; margin-bottom: 0; }
+        .swipe-card ul { font-size: 14px; margin-bottom: 0; padding-left: 20px; }
+        .swipe-card li { font-size: 14px; margin-bottom: 6px; }
+
+        /* Signal list */
+        .signal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 20px 0;
+        }
+        .signal-item {
+            display: flex;
+            align-items: start;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+        }
+        .signal-item .signal-icon {
+            flex-shrink: 0;
+            width: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .signal-service .signal-icon { color: var(--color-accent); }
+        .signal-social .signal-icon { color: #6C5CE7; }
+
+        /* FAQ section */
+        .faq-list { margin-top: 24px; }
+        .faq-item {
+            border-bottom: 1px solid var(--color-border);
+            padding: 20px 0;
+        }
+        .faq-item:first-child { border-top: 1px solid var(--color-border); }
+        .faq-q {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 10px;
+        }
+        .faq-a {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .feature-content h1 { font-size: 32px; }
+            .feature-content h2 { font-size: 22px; }
+            .swipe-explainer { grid-template-columns: 1fr; }
+            .swipe-card.swipe-skip { grid-column: auto; }
+            .signal-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav scrolled" id="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <div class="logo-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect width="32" height="32" rx="8" fill="url(#logoGrad)"/>
+                        <path d="M10 10.5C10 9.67 10.67 9 11.5 9H20.5C21.33 9 22 9.67 22 10.5V21.5C22 22.33 21.33 23 20.5 23H11.5C10.67 23 10 22.33 10 21.5V10.5Z" stroke="white" stroke-width="1.5"/>
+                        <circle cx="16" cy="14" r="2.5" stroke="white" stroke-width="1.5"/>
+                        <path d="M12.5 20C12.5 18.07 14.07 16.5 16 16.5C17.93 16.5 19.5 18.07 19.5 20" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                        <defs><linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32"><stop offset="0%" stop-color="#0A1628"/><stop offset="100%" stop-color="#1A2744"/></linearGradient></defs>
+                    </svg>
+                </div>
+                <span class="logo-text">AIPhoneBook</span>
+            </a>
+            <a href="/" class="nav-cta">Back to Home</a>
+        </div>
+    </nav>
+
+    <section class="feature-page">
+        <div class="container">
+            <div class="feature-content">
+                <a href="/" class="feature-back">&larr; Back to Home</a>
+
+                <span class="shield-badge">
+                    <svg viewBox="0 0 14 14" fill="none"><path d="M7 1L2 3.5V6.5C2 9.82 4.14 12.91 7 13.5C9.86 12.91 12 9.82 12 6.5V3.5L7 1Z" fill="currentColor"/></svg>
+                    Industry First
+                </span>
+
+                <h1>Privacy Shield</h1>
+                <p class="feature-tagline">AIPhoneBook's intelligent contact organizer that separates service contacts from your personal connections — so social apps stop treating your plumber like a friend.</p>
+
+                <!-- What Is Privacy Shield -->
+                <h2>What Is Privacy Shield?</h2>
+                <p>When service contacts live in your iOS Contacts, they automatically appear in WhatsApp, Instagram, Telegram, and other social apps that sync your phone book. Your driver sees your status updates. Your plumber appears in "People You May Know." Your maid gets suggested as someone to follow.</p>
+                <p>Privacy Shield uses on-device AI to identify these service contacts — drivers, maids, delivery personnel, repair services — and lets you move them to AIPhoneBook's private storage, where they remain fully functional for calls and CallerID but stop appearing in your social apps.</p>
+
+                <div class="callout callout-callerid">
+                    <div class="callout-title">
+                        <span class="icon">📞</span>
+                        CallerID keeps working
+                    </div>
+                    <p>Moved contacts still show their name when they call you. AIPhoneBook provides CallerID lookup for all contacts in its database, independent of iOS Contacts.</p>
+                </div>
+
+                <!-- How Does the AI Evaluate -->
+                <h2>How Does the AI Evaluate Contacts?</h2>
+                <p>Privacy Shield uses a dual-path classification system to determine whether a contact is likely a service provider or a personal connection.</p>
+
+                <h3>1. On-Device Foundation Models (Primary)</h3>
+                <p>When available, Privacy Shield uses Apple's on-device language models to analyze each contact. The AI examines the contact's name, job title, company, and overall data profile. It also learns from your past decisions — contacts you previously classified are fed back as examples to improve future accuracy.</p>
+
+                <h3>2. Heuristic Scoring (Fallback)</h3>
+                <p>When Foundation Models are unavailable, a weighted signal engine evaluates contacts using multiple factors:</p>
+
+                <div class="signal-grid">
+                    <div class="signal-item signal-service">
+                        <span class="signal-icon">+</span>
+                        <span><strong>Name patterns</strong> — Role keywords in name (e.g., "Ram Security", "Plumber Rajesh")</span>
+                    </div>
+                    <div class="signal-item signal-service">
+                        <span class="signal-icon">+</span>
+                        <span><strong>Missing details</strong> — No email, no photo, no birthday, no social profiles</span>
+                    </div>
+                    <div class="signal-item signal-service">
+                        <span class="signal-icon">+</span>
+                        <span><strong>Minimal data</strong> — Single phone number with no other information</span>
+                    </div>
+                    <div class="signal-item signal-service">
+                        <span class="signal-icon">+</span>
+                        <span><strong>No last name</strong> — Service contacts are often saved as a single name</span>
+                    </div>
+                    <div class="signal-item signal-social">
+                        <span class="signal-icon">&minus;</span>
+                        <span><strong>Has birthday</strong> — Indicates a personal relationship</span>
+                    </div>
+                    <div class="signal-item signal-social">
+                        <span class="signal-icon">&minus;</span>
+                        <span><strong>Social profiles</strong> — Connected on social platforms</span>
+                    </div>
+                    <div class="signal-item signal-social">
+                        <span class="signal-icon">&minus;</span>
+                        <span><strong>Marked favorite</strong> — User explicitly values this contact</span>
+                    </div>
+                    <div class="signal-item signal-social">
+                        <span class="signal-icon">&minus;</span>
+                        <span><strong>Multiple emails</strong> — Service contacts rarely have more than one</span>
+                    </div>
+                </div>
+
+                <p>Every classification includes a confidence percentage and a plain-English explanation of why the AI made its recommendation.</p>
+
+                <!-- Data Privacy -->
+                <h2>Your Data Stays On Your Device</h2>
+
+                <div class="callout callout-privacy">
+                    <div class="callout-title">
+                        <span class="icon">🔒</span>
+                        100% on-device processing
+                    </div>
+                    <p>Your privacy is the entire point of this feature. We built it to protect your data, not collect it.</p>
+                </div>
+
+                <ul>
+                    <li>All AI analysis runs on-device using Apple Foundation Models</li>
+                    <li>No contact data is sent to any server or cloud service</li>
+                    <li>No names, phone numbers, or personal information leaves your device</li>
+                    <li>The heuristic fallback engine also runs entirely on-device</li>
+                    <li>Classification results are stored locally and never transmitted</li>
+                </ul>
+
+                <!-- Swipe Actions -->
+                <h2>What Happens When You Swipe?</h2>
+                <p>Each contact card shows the AI's classification, confidence level, and reasoning. You make the final call with a simple gesture.</p>
+
+                <div class="swipe-explainer">
+                    <div class="swipe-card swipe-left">
+                        <div class="swipe-direction">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 4L6 8l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Swipe Left — Keep in iOS
+                        </div>
+                        <p>The contact stays exactly where it is. No changes are made. It will continue to appear in WhatsApp, Instagram, Telegram, and other apps that sync your phone book.</p>
+                    </div>
+                    <div class="swipe-card swipe-right">
+                        <div class="swipe-direction">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Swipe Right — Move to AIPhoneBook
+                        </div>
+                        <ul>
+                            <li><strong>CallerID still works</strong> — their name still appears when they call</li>
+                            <li><strong>You can still call them</strong> — search in AIPhoneBook and call directly</li>
+                            <li><strong>Social apps won't see them</strong> — removed from iOS Contacts sync</li>
+                        </ul>
+                    </div>
+                    <div class="swipe-card swipe-skip">
+                        <div class="swipe-direction">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                            Skip
+                        </div>
+                        <p>Pass on a contact without making a decision. You can review skipped contacts later.</p>
+                    </div>
+                </div>
+
+                <!-- Undo -->
+                <h2>Can I Undo a Decision?</h2>
+                <p>Yes. During your review session, tap the Undo button to reverse your last swipe. After the session is complete and changes are applied, you can still restore any moved contact from within AIPhoneBook's contact management screen. Every migration is fully reversible.</p>
+
+                <!-- Batch Processing -->
+                <h2>Batch Processing</h2>
+                <p>If you have many contacts to review, Privacy Shield processes them in batches of 40. After each batch, your decisions are applied immediately, and you can continue with the next batch or pause and finish later. Your progress is saved, so you never have to re-review contacts you've already processed.</p>
+
+                <div class="callout callout-warning">
+                    <div class="callout-title">
+                        <span class="icon">⚡</span>
+                        Decisions are deferred for safety
+                    </div>
+                    <p>No contacts are actually moved during swiping. All migrations are batched and applied together after you review the summary screen and tap "Apply Changes." This protects against accidental moves and enables undo.</p>
+                </div>
+
+                <!-- FAQ -->
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-q">Will moved contacts lose their phone numbers or details?</div>
+                        <p class="faq-a">No. All contact information — phone numbers, emails, notes, photos — is preserved exactly as it was. The contact simply moves from iOS Contacts to AIPhoneBook's database.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">What if the AI gets it wrong?</div>
+                        <p class="faq-a">The AI provides a recommendation, but you make the final decision. Every contact shows the AI's reasoning and confidence level so you can make an informed choice. If you disagree, simply swipe the opposite direction.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">Does this affect my ability to receive calls?</div>
+                        <p class="faq-a">No. Moving a contact to AIPhoneBook does not block calls. The contact's number still works normally, and CallerID will still identify them when they call.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">Can I run Privacy Shield again later?</div>
+                        <p class="faq-a">Yes. As you add new contacts to your phone, you can run Privacy Shield again to review the new additions. Previously reviewed contacts are not shown again unless you reset your review history.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">Does this work with WhatsApp Business contacts?</div>
+                        <p class="faq-a">Privacy Shield reviews contacts stored in iOS Contacts. WhatsApp Business contacts that exist only within WhatsApp are not affected.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">What about contacts shared across iCloud?</div>
+                        <p class="faq-a">If you use iCloud Contacts, moving a contact to AIPhoneBook removes it from iCloud sync as well. The contact will no longer appear on your other Apple devices' Contacts app, but CallerID on your iPhone will still work.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">Is my data shared with anyone?</div>
+                        <p class="faq-a">No. All processing happens on your device. No contact data is transmitted to AIPhoneBook's servers, third-party services, or anywhere else.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">How accurate is the AI?</div>
+                        <p class="faq-a">Privacy Shield learns from your decisions. The more contacts you review, the better it understands your preferences. Initial accuracy typically ranges from 80-90% for contacts with clear service signals (role keywords in name, minimal data profile).</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+                <p>&copy; 2026 Intellispace Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
